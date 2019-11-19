@@ -12,14 +12,9 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION["user"];
+$status = $_SESSION['status'];
+$form = $_SESSION['form'];
 
-$isAdmin="SELECT Uid FROM administrator WHERE Uid = '$username'";
-
-$result = mysqli_query($conn,$isAdmin);
-$num = mysqli_num_rows($result);
-if($num == 1){
-header('location:adminhome.php');	
-}
 #echo $username;
 ?>
 <!DOCTYPE html>
@@ -30,12 +25,14 @@ header('location:adminhome.php');
 	<title>HomePage</title>
 </head>
 <body>
-	Student Home Page
+	Application Status
+	<br/s>
+	<?php
+	echo $username,"'s form '",$form,"'' is ",$status;
+	?>
 <nav>
   <ul>
-    <li><a href="appointment.php">Create Appointment</a></li>
-    <li><a href="application.php">Create Application</a></li>
-    <li><a href="status.php">Check Application status</a></li>
+    <li><a href="home.php">Go Back to home page</a></li>
   </ul>
 </nav>
 </body>
