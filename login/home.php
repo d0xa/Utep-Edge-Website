@@ -12,8 +12,11 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION["user"];
+$ID = $_SESSION["ID"];
 
 $isAdmin="SELECT Uid FROM administrator WHERE Uid = '$username'";
+
+echo "this is the test: ",$ID ,"|";
 
 $result = mysqli_query($conn,$isAdmin);
 $num = mysqli_num_rows($result);

@@ -1,3 +1,4 @@
+<!-- Application form -->
 <?php 
 session_start();
 $host ="ilinkserver.cs.utep.edu";
@@ -6,10 +7,11 @@ $DBusername = 'raguilarsa';
 $DBpassword = '*utep2020!';
 
 $username = $_SESSION['username'];
+$id = $_SESSION['ID'];
 $type = $_POST['type'];
 $formNumber = $_POST['form'];
 $appStatus = "Pending"; //will be default until admin accepts/rejects application
-$studentID = $_POST['studentID'];
+#$studentID = $_SESSION['ID'];
 $Auid = $_POST['admin_name'];
 $_SESSION['status'] = $appStatus;
 $_SESSION['form'] = $formNumber;
@@ -22,10 +24,10 @@ if ($conn->connect_error) {
 }
 #echo "Connected successfully";
 
-$reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fill_suid) VALUES('$formNumber','$appStatus','$type','$Auid','80482888')";
+$reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fill_suid) VALUES('$formNumber','$appStatus','$type','$Auid','$id')";
 	mysqli_query($conn,$reg);
-	echo $reg;
-	echo $formNumber,'   ',$appStatus,'   ',$type,'   ',$Auid,'   ',$studentID;
+	#echo $reg;
+	echo $formNumber,'   ',$appStatus,'   ',$type,'   ',$Auid,'   ',$id;
  ?>
  <!DOCTYPE html>
 <html>

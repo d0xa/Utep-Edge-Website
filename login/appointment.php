@@ -12,6 +12,7 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION["user"];
+
 #echo $username;
 ?>
 <!DOCTYPE html>
@@ -28,14 +29,6 @@ $username = $_SESSION["user"];
   <div class="row">
   <div class="col-md-4">
     <form action="submit.php" method="POST">
-      <div class="form-group">
-        <label>Type of Appointment</label>
-          <select name="type" required>
-          <option value="Work_Study">Work Study</option>
-          <option value="Advising">Advising</option>
-          <option value="Research">Research</option>
-          </select>
-        </div>
       <div class="form-group">
         <label>Date</label>
         <input type="date" name="date" class="form-control" required>
@@ -54,7 +47,7 @@ $username = $_SESSION["user"];
         </div>
 
         <?php
-        $sql = "SELECT Ufirstname,Ulastname FROM user WHERE Uid IN (SELECT Uid FROM administrator)"
+        $sql = "SELECT Ufirstname,Ulastname,Uid FROM user WHERE Uid IN (SELECT Uid FROM administrator)"
         or die("Error: ". mysql_error(). " with query ");
         $options = '';
         $result = mysqli_query($conn,$sql);
@@ -63,7 +56,7 @@ $username = $_SESSION["user"];
         if($num > 0 ){
             while($row = mysqli_fetch_array($result)) {
                 $options .="<option>" . $row['Ufirstname']." " .$row['Ulastname']. "</option>";
-            }
+            } 
         }
         $menu="<form id='admin_name' name='admin_name' method='post' action=''>
         <p><label>Select administrator you wish to see</label></p>
@@ -83,7 +76,8 @@ $username = $_SESSION["user"];
 
 <nav>
   <ul>
-    <li><a href="home.php">Go Back to home page</a></li>
+    <!-- <li><a href="home.php">Go Back to home page</a></li> -->
+    <li><a href="login.php">Login/Register</a></li>
   </ul>
 </nav>
 </body>

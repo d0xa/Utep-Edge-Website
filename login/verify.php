@@ -1,15 +1,15 @@
 <?php 
 session_start();
-$_SESSION["user"] = $username;
+$username = $_POST['username'];
+$password = $_POST['password'];
 
+$_SESSION["user"] = $username;
 
 $host ="ilinkserver.cs.utep.edu";
 $db = 'f19_team9';
 $DBusername = 'raguilarsa';
 $DBpassword = '*utep2020!';
 
-$username = $_POST['username'];
-$password = $_POST['password'];
 
 
 
@@ -28,12 +28,20 @@ if ($conn->connect_error) {
 
 
 $sql="SELECT Uusername,Upassword FROM user WHERE Uusername = '$username' && Upassword = '$password'";
+$sql2 = "SELECT Uid FROM user WHERE Uusername = '$username'";
 
 $result = mysqli_query($conn,$sql);
+$result2 = mysqli_query($conn,$sql2);
 $num = mysqli_num_rows($result); //if there is a match this should = 1
-
+$row = $result2->fetch_array(MYSQLI_ASSOC);
+#$retrive = mysqli_fetch($result2);
+$id = $row['Uid'];
+$_SESSION["ID"] = $id;
+##echo $id;
 if($num ==1){
 	$_SESSION["user"] = $username;
+	
+
 	#$username = $_POST['username'];
 	header('location:home.php');
 

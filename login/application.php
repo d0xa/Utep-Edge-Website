@@ -61,10 +61,6 @@ $username = $_SESSION["user"];
           echo $menu;
         ?>
     </div>
-         <div class="form-group">
-        <label>Confirm ID number</label>
-        <input type="text" name="studentID" id="" class="form-control" >
-        </div>
         <button type="submit" class="btn btn-primary">Submit application</button>
 		</form>
 		</div>

@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 $username = $_SESSION["user"];
 $status = $_SESSION['status'];
 $form = $_SESSION['form'];
-
+$id = $_SESSION['ID'];
 #echo $username;
 ?>
 <!DOCTYPE html>
@@ -27,8 +27,26 @@ $form = $_SESSION['form'];
 <body>
 	Application Status
 	<br/s>
+
 	<?php
-	echo $username,"'s form '",$form,"'' is ",$status;
+	
+	$sql="SELECT Fill_suid FROM application WHERE Fill_suid = '$id'";
+	
+	$result = mysqli_query($conn,$sql);
+	$num = mysqli_num_rows($result); //if there is a match this should = 1
+	echo $username," ";
+	$row;
+	$sql2="SELECT Appform_number,Appstatus,Manage_auid FROM application WHERE Fill_suid = '$id'";
+	$result2 = mysqli_query($conn,$sql2);
+	#$row = $result2->fetch_array(MYSQLI_ASSOC);
+	echo $num,"<br>";
+if($num >0){
+	 while($row = mysqli_fetch_array($result2)) {
+	echo "Form Number: ", $row['Appform_number'],"s status ",$row['Appstatus']," is being managed by ", $row['Manage_auid'];
+	echo "<br>";
+	#echo $row;
+}
+}
 	?>
 <nav>
   <ul>

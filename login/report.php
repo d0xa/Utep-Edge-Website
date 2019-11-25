@@ -12,25 +12,22 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION["user"];
-
-#echo $username;
+$ID = $_SESSION["ID"];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></head>
-	<title>HomePage</title>
+	<title>Generate Report</title>
 </head>
 <body>
-	Admin Page
-	<br>
-	<?php echo $username;  ?>
+	Generate report!
 <nav>
   <ul>
-    <li><a href="admin_appointment.php">Approve Appointment</a></li>
-    <li><a href="admin_application.php">Check Applications</a></li>
-    <li><a href="report.php">Generate Report</a></li>
+    <!-- <li><a href="appointment.php">Create Appointment</a></li>
+    <li><a href="application.php">Create Application</a></li>-->
+    <li><a href="adminhome.php">Go back to home page</a></li>
   </ul>
 </nav>
 </body>
