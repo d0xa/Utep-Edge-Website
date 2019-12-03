@@ -1,4 +1,4 @@
-<!-- Application submission -->
+<!-- Appointment submission -->
 <?php 
 session_start();
 $host ="ilinkserver.cs.utep.edu";
@@ -38,7 +38,7 @@ $reg = "INSERT INTO appointment(Aptime,Apdate,Aplocation,Make_suid,Approve_auid,
 	mysqli_query($conn,$reg);
 
 	#echo $time,"	|",$date,"	|",$location,"	|",$id,"	 |",$adminUid, "	|",$comment;
-	echo $reg;
+	#echo $reg;
  ?>
  <!DOCTYPE html>
 <html>
@@ -49,6 +49,7 @@ $reg = "INSERT INTO appointment(Aptime,Apdate,Aplocation,Make_suid,Approve_auid,
 </head>
 <body>
 	<!-- You have sucessfully submitted an Appointment, please wait for the Administrator to approve the appointment -->
+	<h2>Appointment submitted sucessfully!</h2>
 
 
 <nav>

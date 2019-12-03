@@ -35,7 +35,7 @@ $adminUid = $temp['Uid'];
 $reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fill_suid,Appdate,Appcomments) VALUES('$formNumber','$appStatus','$type','$adminUid','$id','$date','$comment');";
 	mysqli_query($conn,$reg);
 	#echo $reg;
-	echo $reg;
+	#echo $reg;
  ?>
  <!DOCTYPE html>
 <html>
@@ -46,6 +46,7 @@ $reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fil
 </head>
 <body>
 	<!-- You have sucessfully submitted an Application, please wait for the Administrator to approve the application -->
+	<h2>Application submitted sucessfully!</h2>
 
 <nav>
   <ul>

@@ -13,8 +13,6 @@ $DBusername = 'raguilarsa';
 $DBpassword = '*utep2020!';
 
 
-
-
 $conn = new mysqli($host,$DBusername,$DBpassword,$db);
 
 if ($conn->connect_error) {

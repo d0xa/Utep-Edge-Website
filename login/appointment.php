@@ -66,10 +66,6 @@ $username = $_SESSION["user"];
           echo $menu;
         ?>
         <div class="form-group">
-        <label>Student ID</label>
-        <input type="text" name="id" class="form-control" required>
-        </div>
-        <div class="form-group">
         <label>Comment</label>
         <input type="text" name="comment" class="form-control" >
         </div>

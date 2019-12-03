@@ -9,7 +9,7 @@ $_SESSION["form"] = $Appform_number;
 	<body>
 		<div class="row">
 			<div class="col-md-4">
-				<h2> <?php echo "$Appform_number"; ?></h2>
+				<h2> <?php echo "Form: ","$Appform_number"; ?></h2>
 				<form action="update_application.php" method="POST">
 					<label>Set status as:</label>
 					<select name="status">

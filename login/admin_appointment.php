@@ -39,22 +39,7 @@ $id = $_SESSION["ID"];
                 echo "<br>";
             }
         }
-        // $menu="<form id='admin_name' name='admin_name' method='post' action=''>
-        // <p><label>Select administrator you wish to see</label></p>
-        //   <select name='admin_name' id='admin_name'>
-        //   " . $options . "
-        //   </select>";
-        //   echo $menu;
         ?>
-<!--         <div class="form-group">
-        <label>Comment</label>
-        <input type="text" name="comment" class="form-control" >
-        </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </div>
-  </div> -->
-
 <nav>
   <ul>
     <!-- <li><a href="home.php">Go Back to home page</a></li> -->

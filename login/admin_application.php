@@ -23,7 +23,7 @@ echo $username;
 	<title>HomePage</title>
 </head>
 <body>
-	View Applications
+	Check Applications
 	<br>
         <?php
         $sql = "SELECT * FROM application WHERE Manage_auid ='$ID';"
