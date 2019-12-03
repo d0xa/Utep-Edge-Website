@@ -45,23 +45,23 @@ table, th, td {
         switch($_POST['ApplicationsByDepartment']){
             case 'CollegeAccreditationProcess' :
                 echo "College Accreditation Process\r\n";
-                $sql = "CALL ApplicationsByDepartment('College Accreditation Process');";
+                $sql = "CALL ApplicationsByDepartment('College Accreditation Process')";
                 break;
             case 'GraduateStudies':
                 echo "Graduate Studies\r\n";
-                $sql = "CALL ApplicationsByDepartment('Graduate Studies');";
+                $sql = "CALL ApplicationsByDepartment('Graduate Studies')";
                 break;
             case 'LowerDivisionAdvising' :
                 echo "Lower Division Advising\r\n";
-                $sql = "CALL ApplicationsByDepartment('Lower Division Advising');";
+                $sql = "CALL ApplicationsByDepartment('Lower Division Advising')";
                 break;
             case 'UndergraduateForms' :
                 echo "Undergraduate Forms\r\n";
-                $sql = "CALL ApplicationsByDepartment('Undergraduate Forms');";
+                $sql = "CALL ApplicationsByDepartment('Undergraduate Forms')";
                 break;
             case 'UndergraduateResearchOpportunities' :
                 echo "Undergraduate Research Opportunities\r\n";
-                $sql = "CALL ApplicationsByDepartment('Undergraduate Research Opportunities');";
+                $sql = "CALL ApplicationsByDepartment('Undergraduate Research Opportunities')";
                 break;    
             default:
         }
@@ -98,6 +98,7 @@ table, th, td {
     
     <ul>
     <li><a href="adminhome.php">Go Back to home page</a></li>
+    <li><a href="report.php">Go Back to generate reports</a></li>
     </ul>
 </body>
 </html>

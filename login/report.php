@@ -26,79 +26,19 @@ table, th, td {
 
     <h1>Generate Report</h1>
     <label>Select Report Type</label>
-    
-    <select name="Report Type" id= "Report Type" required>
-        <option value ="Applications"> Applications</option>
-    </select>
-
-    <form method = "post">
-    <select name="ApplicationStatus">
-        <option value ="Submitted"> Submitted</option>
-        <option value ="PendingSignature"> Pending Signature</option>
-        <option value ="Returned"> Returned</option>
-        <option value ="Approved"> Approved</option>
-        <option value ="Denied"> Denied</option>
-        <input type = "submit", name = "submit" , value = "submit">
-    </select>
-    </form>
-    
+    <ul>
+        <li><a href= "ApplicationCountByStatus.php"> Application Totals By Status</a></li>
+        <li><a href= "ApplicationCountByType.php"> Application Totals By Form</a></li>
+        <li><a href= "StudentCountReport.php"> Number of Students in System</a></li>
+        <li><a href= "StudentClassification.php"> Students By Classification</a></li>
+        <li><a href ="ApplicationsbyMonthReport.php"> Applications By Month</a></li>
+        <li><a href ="ApplicationStatusReport.php"> Applications by Status</a></li>
+        <li><a href= "ApplicationDepartmentReport.php">Applications by Department</a></li>
+    </ul>
     <br></br>
 
-    <div class = "Table">
-    <?php
-        switch($_POST['ApplicationStatus']){
-            case 'Submitted' :
-                echo "Submitted\r\n";
-                $sql = "SELECT * FROM applications_submitted";
-                break;
-            case 'PendingSignature':
-                echo "Pending Signature\r\n";
-                $sql = "SELECT * FROM applications_pending";
-                break;
-            case 'Returned' :
-                echo "Returned\r\n";
-                $sql = "SELECT * FROM applications_returned";
-                break;
-            case 'Approved' :
-                echo "Approved\r\n";
-                $sql = "SELECT * FROM applications_approved";
-                break;
-            case 'Denied' :
-                echo "Denied\r\n";
-                $sql = "SELECT * FROM applications_denied";
-                break;    
-            default:
-        }
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            echo "<table><tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Form Number</th>
-                    <th>Application Status</th>
-                    <th>Application type</th>";
-            while($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["Uid"]. "</td>
-                          <td>" . $row["Uusername"]. "</td>
-                          <td>" . $row["Ufirstname"]. " " . $row["Ulastname"]. "</td>
-                          <td>" . $row["Appform_number"]. "</td>
-                          <td>" . $row["Appstatus"]. "</td>
-                          <td>" . $row["Apptype"]. "</td>
-                          </tr>";
-            }
-            echo "</table>";
-       
-        } else {
-            echo "\r\n0 results";
-        }
-
-        $conn->close();
-    ?>
-    </div>
-    
     <ul>
-    <li><a href="home.php">Go Back to home page</a></li>
+    <li><a href="adminhome.php">Go Back to home page</a></li>
     </ul>
 </body>
 </html>
