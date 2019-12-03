@@ -28,7 +28,7 @@ table, th, td {
     <label>Select Report Type</label>
     <ul>
         <li><a href= "ApplicationCountByStatus.php"> Application Status Count</a></li>
-        <li><a href= "StudentCountReport.php"> Application Status Count</a></li>
+        <li><a href= "StudentCountReport.php"> Number of Students in System</a></li>
         <li><a href ="ApplicationsbyMonthReport.php"> Applications by Month</a></li>
         <li><a href ="ApplicationStatusReport.php"> Applications by Status</a></li>
         <li><a href= "ApplicationDepartmentReport.php">Applications by Department</a></li>
