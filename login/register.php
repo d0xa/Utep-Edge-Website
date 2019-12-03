@@ -1,28 +1,26 @@
-	<html>
+<html>
 	<head>
 		<title>Register your account! </title>
-		<link rel="stylesheet" type="text/css"
-		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></head>
-		<nav>
-			<ul>
-				<li><a href="login.php">Back to Login page</a></li>
-			</ul>
-		</nav>	
-		<body>
-			<div class="container">
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<link href="logintheme.css" rel="stylesheet" type="text/css">
+	</head>
+		<body  id= "custom" class = "login" align="center">
+			<div class="loginTitle">
+				<label>UTEP EDGE Register</label>
+			</div>
+			<div class="container" align="center">
 				<div class="row">
-					<div class="col-md-4">
-						<h2> Utep Edge Register</h2>
+					<div class="col-md">
 						<form action="verify_registration.php" method="POST">
-							<div class="form-group">
+							<div class="form-group" >
 								<label>ID</label>
 								<input type="text" name="id" class="form-control" required>
 							</div>
-							<div class="form-group">
+							<div class="form-group" >
 								<label>Username</label>
 								<input type="text" name="username2" class="form-control" required>
 							</div>
-							<div class="form-group">
+							<div class="form-group" >
 								<label>Password</label>
 								<input type="password" name="password" class="form-control" required>
 							</div>
@@ -38,6 +36,9 @@
 								<label>Last Name</label>
 								<input type="text" name="lname" class="form-control" required>
 							</div>
+							
+						</div>
+						<div class="col-md-6">
 							<div class="form-group">
 								<label>Ethnicity</label>
 								<input type="text" name="ethnicity" class="form-control" required>
@@ -54,11 +55,10 @@
 								<label>Military Status</label>
 								<input type="text" name="military" class="form-control" required>
 							</div>
-							<div class="form-group">
+							<div class="form-group" class="eight columns omega">
 								<label>Major</label>
 								<input type="text" name="major" class="form-control" required>
-							</div>
-							
+					</div>
 							<button type="submit" class="btn btn-primary">Register</button>
 						</form>
 					</div>
@@ -66,4 +66,4 @@
 			</div>
 
 		</body>
-		</html>
+</html>

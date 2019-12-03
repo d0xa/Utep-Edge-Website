@@ -8,13 +8,13 @@ $DBpassword = '*utep2020!';
 
 $username = $_SESSION['username'];
 $id = $_SESSION['ID'];
-$type = $_POST['form'];
-$formNumber = $_POST['number'];
+$type = $_POST['type'];
+$formNumber = $_POST['form'];
 $appStatus = "Pending"; //will be default until admin accepts/rejects application
 #$studentID = $_SESSION['ID'];
 $date = date('Y-m-d');
-// $_SESSION['status'] = $appStatus;
-//$_SESSION['form'] = $formNumber;
+$_SESSION['status'] = $appStatus;
+$_SESSION['form'] = $formNumber;
 $Auid = $_POST['admin_name']; // who was sent the submission
 $comment = "";
 $adminName = explode(" ", $Auid);
@@ -35,7 +35,7 @@ $adminUid = $temp['Uid'];
 $reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fill_suid,Appdate,Appcomments) VALUES('$formNumber','$appStatus','$type','$adminUid','$id','$date','$comment');";
 	mysqli_query($conn,$reg);
 	#echo $reg;
-	#echo $reg;
+	echo $reg;
  ?>
  <!DOCTYPE html>
 <html>
@@ -46,7 +46,6 @@ $reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fil
 </head>
 <body>
 	<!-- You have sucessfully submitted an Application, please wait for the Administrator to approve the application -->
-	<h2>Application submitted sucessfully!</h2>
 
 <nav>
   <ul>
