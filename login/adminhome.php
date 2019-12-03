@@ -22,15 +22,16 @@ $username = $_SESSION["user"];
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></head>
 	<title>HomePage</title>
 </head>
+<?php echo " Home Page";  ?>
 <body>
-	Admin Page
 	<br>
-	<?php echo $username;  ?>
+	
 <nav>
   <ul>
-    <li><a href="admin_appointment.php">Approve Appointment</a></li>
+    <li><a href="admin_appointment.php">View Appointments</a></li>
     <li><a href="admin_application.php">Check Applications</a></li>
     <li><a href="report.php">Generate Report</a></li>
+    <li><a href="logout.php">Logout</a></li>
   </ul>
 </nav>
 </body>

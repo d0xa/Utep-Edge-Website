@@ -13,15 +13,7 @@
         <label>Ethnicity</label>
         <input type="text" name="ethnicity" class="form-control" required>
       	</div>
-		<div class="form-group">
-          <label>classification</label>
-          <option value="Freshman">Freshman</option>
-          <option value="Sophmore">Sophmore</option>
-          <option value="Junior">Junior</option>
-          <option value="Senior">Senior</option>
-          <select name='classification' id='classification' required>
-          </select>
-        </div>
+		
         <div class="form-group">
           <label>Gender</label>
           <select name="type" required>

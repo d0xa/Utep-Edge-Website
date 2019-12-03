@@ -12,9 +12,12 @@ $type = $_POST['type'];
 $formNumber = $_POST['form'];
 $appStatus = "Pending"; //will be default until admin accepts/rejects application
 #$studentID = $_SESSION['ID'];
-$Auid = $_POST['admin_name'];
+$date = date('Y-m-d');
 $_SESSION['status'] = $appStatus;
 $_SESSION['form'] = $formNumber;
+$Auid = $_POST['admin_name']; // who was sent the submission
+$comment = "";
+$adminName = explode(" ", $Auid);
 
 
 $conn = new mysqli($host,$DBusername,$DBpassword,$db);
@@ -23,11 +26,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 #echo "Connected successfully";
+$sql="SELECT Uid FROM user WHERE Ufirstname= '$adminName[0]' AND Ulastname = '$adminName[1]'";
 
-$reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fill_suid) VALUES('$formNumber','$appStatus','$type','$Auid','$id')";
+$result = mysqli_query($conn,$sql);
+$temp = $result->fetch_array(MYSQLI_ASSOC); //use this to fetch the sql table that meets these requirements
+$adminUid = $temp['Uid'];
+
+$reg = "INSERT INTO application(Appform_number,Appstatus,Apptype,Manage_auid,Fill_suid,Appdate,Appcomments) VALUES('$formNumber','$appStatus','$type','$adminUid','$id','$date','$comment');";
 	mysqli_query($conn,$reg);
 	#echo $reg;
-	echo $formNumber,'   ',$appStatus,'   ',$type,'   ',$Auid,'   ',$id;
+	echo $reg;
  ?>
  <!DOCTYPE html>
 <html>

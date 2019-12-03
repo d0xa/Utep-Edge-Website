@@ -39,6 +39,7 @@ header('location:adminhome.php');
     <li><a href="appointment.php">Create Appointment</a></li>
     <li><a href="application.php">Create Application</a></li>
     <li><a href="status.php">Check Application status</a></li>
+    <li><a href="logout.php">Logout</a></li>
   </ul>
 </nav>
 </body>

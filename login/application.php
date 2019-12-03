@@ -48,19 +48,29 @@ $username = $_SESSION["user"];
         $options = '';
         $result = mysqli_query($conn,$sql);
         $num = mysqli_num_rows($result);
+
         if($num > 0 ){
             while($row = mysqli_fetch_array($result)) {
-                $options .="<option>" .$row['Uid']. "</option>";
-            }
+                $options .="<option>" . $row['Ufirstname']." " .$row['Ulastname']. "</option>";
+            } 
         }
         $menu="<form id='admin_name' name='admin_name' method='post' action=''>
-        <p><label>Select administrator you wish to submit an application to </label></p>
+        <p><label>Select administrator you wish to see</label></p>
           <select name='admin_name' id='admin_name'>
           " . $options . "
           </select>";
           echo $menu;
         ?>
     </div>
+     <!-- <div class="form-group">
+        <label>Date</label>
+        <input type="date" name="date" class="form-control" required>
+      </div> -->
+      
+      <!-- <div class="form-group">
+        <label>Comment</label>
+        <input type="text" name="comment" class="form-control" >
+        </div> -->
         <button type="submit" class="btn btn-primary">Submit application</button>
 		</form>
 		</div>
@@ -68,8 +78,8 @@ $username = $_SESSION["user"];
 </div>
 <nav>
   <ul>
-    <li><a href="home.php">Go Back to home page</a></li>
-    <li><a href="status.php">Check status</a></li>
+    <li><a href="home.php">Go back to home page</a></li>
+    <li><a href="status.php">Check application's atatus</a></li>
   </ul>
 </nav>
 </body>

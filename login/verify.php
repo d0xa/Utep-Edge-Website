@@ -1,3 +1,4 @@
+<!-- Verifying login information -->
 <?php 
 session_start();
 $username = $_POST['username'];
@@ -47,6 +48,7 @@ if($num ==1){
 
 }
 else{
+	echo "Wrong login information entered";
 	header('location:login.php?');
 }
  ?>

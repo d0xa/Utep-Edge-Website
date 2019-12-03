@@ -36,13 +36,13 @@ $id = $_SESSION['ID'];
 	$num = mysqli_num_rows($result); //if there is a match this should = 1
 	echo $username," ";
 	$row;
-	$sql2="SELECT Appform_number,Appstatus,Manage_auid FROM application WHERE Fill_suid = '$id'";
+	$sql2="SELECT Appform_number,Appstatus,Manage_auid,Appdate,Appcomments FROM application WHERE Fill_suid = '$id'";
 	$result2 = mysqli_query($conn,$sql2);
 	#$row = $result2->fetch_array(MYSQLI_ASSOC);
 	echo $num,"<br>";
 if($num >0){
 	 while($row = mysqli_fetch_array($result2)) {
-	echo "Form Number: ", $row['Appform_number'],"s status ",$row['Appstatus']," is being managed by ", $row['Manage_auid'];
+	echo "Form: ", $row['Appform_number'],"s current status is ",$row['Appstatus'],", the form is being managed by ", $row['Manage_auid'],". Submitted on: ",$row['Appdate'],". Reason: ",$row['Appcomments'];
 	echo "<br>";
 	#echo $row;
 }

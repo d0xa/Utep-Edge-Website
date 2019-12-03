@@ -17,12 +17,20 @@ if ($conn->connect_error) {
 #mysql_select_db($conn,"user")
 #or die("Could not select database"); 
 
+#This is what we use to create the user
 $id = $_POST['id'];
 $username = $_POST['username2'];
 $password = $_POST['password'];
 $fname = $_POST['fname'];
 $middle = $_POST['middle'];
 $lname = $_POST['lname'];
+
+#This is what we use to create the Student class
+$ethnicity = $_POST['ethnicity'];
+$classification = $_POST['classification'];
+$gender = $_POST['gender'];
+$military = $_POST['military'];
+$major = $_POST['major'];
 
 $check="SELECT Uid,Uusername FROM user WHERE Uid = '$id' OR Uusername = '$username'";
 
@@ -33,9 +41,14 @@ if($num ==1){
 	echo "Username or ID already taken";
 }
 else{
-	$reg = "INSERT INTO user(Uid,Uusername,Upassword,Ufirstname,Umiddleinit,Ulastname) VALUES('$id','$username','$password','$fname','$middle','$lname')";
+	$reg = "INSERT INTO user(Uid,Uusername,Upassword,Ufirstname,Umiddleinit,Ulastname) VALUES('$id','$username','$password','$fname','$middle','$lname');";
 	mysqli_query($conn,$reg);
 	#echo "Registration Sucessful!";
 	echo $id," ",$username," ",$password," ",$fname," ",$middle," ",$lname;
+	echo "<br></br>";
 }
+$sql = "INSERT INTO student(uid,Sethnicity,Sclassification,Sgender,Smilitary_status,Smajor) VALUES ('$id','$ethnicity','$classification','$gender','$military','$major');";
+	mysqli_query($conn,$sql);
+	echo $sql;
+	header('location:login.php');
  ?>

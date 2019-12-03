@@ -23,7 +23,7 @@ echo $username;
 	<title>HomePage</title>
 </head>
 <body>
-	Check Applications
+	View Applications
 	<br>
         <?php
         $sql = "SELECT * FROM application WHERE Manage_auid ='$ID';"
@@ -35,7 +35,11 @@ echo $username;
         if($num > 0 ){
             while($row = mysqli_fetch_array($result)) {
                 echo $row['Appform_number']," ",$row['Apptype']," application"," current status: ",$row['Appstatus'], " submitted by ",$row['Fill_suid'];
-                echo "<br>";
+                echo"<br>";
+                echo '<form action="edit.php" method="post">
+                  <input type="hidden" name="form_number" value="' . $row['Appform_number'] . '" />
+                  <input type="submit" value="Edit Application status" />
+                  </form>';
 
             }
         }	
