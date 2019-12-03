@@ -98,6 +98,7 @@ table, th, td {
     
     <ul>
     <li><a href="adminhome.php">Go Back to home page</a></li>
+    <li><a href="report.php">Go Back to generate reports</a></li>
     </ul>
 </body>
 </html>

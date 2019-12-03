@@ -27,9 +27,11 @@ table, th, td {
     <h1>Generate Report</h1>
     <label>Select Report Type</label>
     <ul>
-        <li><a href= "ApplicationCountByStatus.php"> Application Status Count</a></li>
+        <li><a href= "ApplicationCountByStatus.php"> Application Totals By Status</a></li>
+        <li><a href= "ApplicationCountByType.php"> Application Totals By Form</a></li>
         <li><a href= "StudentCountReport.php"> Number of Students in System</a></li>
-        <li><a href ="ApplicationsbyMonthReport.php"> Applications by Month</a></li>
+        <li><a href= "StudentClassification.php"> Students By Classification</a></li>
+        <li><a href ="ApplicationsbyMonthReport.php"> Applications By Month</a></li>
         <li><a href ="ApplicationStatusReport.php"> Applications by Status</a></li>
         <li><a href= "ApplicationDepartmentReport.php">Applications by Department</a></li>
     </ul>
