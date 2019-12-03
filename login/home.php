@@ -40,7 +40,7 @@ header('location:adminhome.php');
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="appointment.php">Create Appointment</a>
           </li>
           <li class="nav-item">
@@ -62,10 +62,8 @@ header('location:adminhome.php');
         </form>
       </div>
     </nav>
-    
+    <hr>
     <div class="flexBoxWrapper">
-      <hr>
-      <div class ="col-md-9 col-md-push-3 rightSidebar">
         <div class="col-md-7" align="center" >
           <h2>Talented students / Enriching experiences / Lifelong success</h2>
           <div class ="stroke" style = "width:10%;"></div>
@@ -84,9 +82,9 @@ header('location:adminhome.php');
             <p>
               "It’s this competitive edge that distinguishes UTEP students from their peers at other institutions and prepares our graduates for leadership and lifelong success."
             </p>
-        </div>
+            </div>
+          </div>
       </div>
-    </div>
     <hr>
     <footer class="text-center">
       <div class="container">
