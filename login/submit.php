@@ -38,8 +38,9 @@ $reg = "INSERT INTO appointment(Aptime,Apdate,Aplocation,Make_suid,Approve_auid,
 	mysqli_query($conn,$reg);
 
 	#echo $time,"	|",$date,"	|",$location,"	|",$id,"	 |",$adminUid, "	|",$comment;
-	echo $reg;
+	#echo $reg;
  ?>
+ <h2>Appointment submitted sucessfully</h2>
  <!DOCTYPE html>
 <html>
 <head>
