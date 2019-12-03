@@ -8,13 +8,13 @@ $DBpassword = '*utep2020!';
 
 $username = $_SESSION['username'];
 $id = $_SESSION['ID'];
-$type = $_POST['type'];
-$formNumber = $_POST['form'];
+$type = $_POST['form'];
+$formNumber = $_POST['number'];
 $appStatus = "Pending"; //will be default until admin accepts/rejects application
 #$studentID = $_SESSION['ID'];
 $date = date('Y-m-d');
-$_SESSION['status'] = $appStatus;
-$_SESSION['form'] = $formNumber;
+// $_SESSION['status'] = $appStatus;
+//$_SESSION['form'] = $formNumber;
 $Auid = $_POST['admin_name']; // who was sent the submission
 $comment = "";
 $adminName = explode(" ", $Auid);

@@ -30,20 +30,13 @@ $username = $_SESSION["user"];
   <div class="col-md-4">
     <form action="submit2.php" method="POST">
       <div class="form-group">
-        <label>Type of Application</label>
-          <select name="type" id="type" required>
-          <option value="Work_Study">Work Study</option>
-          <option value="Advising">Advising</option>
-          <option value="Research">Research</option>
-          </select>
         </div>
         <div>
         <div class="form-group">
         <label>Form Number</label>
-        <input type="text" name="form" id="form" class="form-control" >
-        </div>
-        <?php
-        $sql = "SELECT Ufirstname,Ulastname,Uid FROM user WHERE Uid IN (SELECT Uid FROM administrator)"
+        <input type="text" name="number" id="form" class="form-control" >
+        </div><?php
+        $sql = "SELECT ftype FROM forms"
         or die("Error: ". mysql_error(). " with query ");
         $options = '';
         $result = mysqli_query($conn,$sql);
@@ -51,15 +44,35 @@ $username = $_SESSION["user"];
 
         if($num > 0 ){
             while($row = mysqli_fetch_array($result)) {
-                $options .="<option>" . $row['Ufirstname']." " .$row['Ulastname']. "</option>";
+                $options .="<option>" . $row['ftype']. "</option>";
             } 
         }
-        $menu="<form id='admin_name' name='admin_name' method='post' action=''>
-        <p><label>Select administrator you wish to see</label></p>
-          <select name='admin_name' id='admin_name'>
+        $menu="<form id='form' name='form' method='post' action=''>
+        <p><label>Select Form</label></p>
+          <select name='form' id='form'>
           " . $options . "
           </select>";
           echo $menu;
+        ?>
+        <!-- DIFFERENT TABLES -->
+        <?php
+        $sql2 = "SELECT Ufirstname,Ulastname,Uid FROM user WHERE Uid IN (SELECT Uid FROM administrator)"
+        or die("Error: ". mysql_error(). " with query ");
+        $options2 = '';
+        $result2 = mysqli_query($conn,$sql2);
+        $num2 = mysqli_num_rows($result2);
+
+        if($num2 > 0 ){
+            while($row2 = mysqli_fetch_array($result2)) {
+                $options2 .="<option>" . $row2['Ufirstname']." " .$row2['Ulastname']. "</option>";
+            } 
+        }
+        $menu2="<form id='admin_name' name='admin_name' method='post' action=''>
+        <p><label>Select administrator you wish to see</label></p>
+          <select name='admin_name' id='admin_name'>
+          " . $options2 . "
+          </select>";
+          echo $menu2;
         ?>
     </div>
      <!-- <div class="form-group">
