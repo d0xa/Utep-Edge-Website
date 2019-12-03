@@ -5,7 +5,7 @@ session_start();
 <head>
 	<title>User Login And Registration </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     <link href="logintheme.css" rel="stylesheet" type="text/css">
 </head>
 <body id= "custom" class = "login text-center body">

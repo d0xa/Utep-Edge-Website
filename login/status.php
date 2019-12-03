@@ -12,6 +12,8 @@ if ($conn->connect_error) {
 }
 
 $username = $_SESSION["user"];
+//$status = $_SESSION['status'];
+//$form = $_SESSION['form'];
 $id = $_SESSION['ID'];
 #echo $username;
 ?>
